@@ -1,0 +1,8 @@
+{% extends "scraper/base.html" %} {% load static %} {% block content %}{% for article in articles %}
+<div class="container"></div>
+<a href="{{article.src}}">{{article.title}}</a>
+
+<div class="detail">
+    <p>{{article.content}}</p>
+</div>
+{% endfor %} {% endblock content %}
