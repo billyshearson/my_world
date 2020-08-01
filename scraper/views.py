@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView, DeleteView
 from .models import Article
 
 
@@ -10,3 +10,15 @@ class ArticleListView(ListView):
     model = Article
     context_object_name = 'articles'
     template_name = "scraper/article_list.html"
+
+
+class ArticleDetailView(DetailView):
+    model = Article
+    template_name = "scraper/article_detail.html"
+    context_object_name = 'article'
+
+
+class ArticleDeleteView(DeleteView):
+    model = Article
+    template_name = "scraper/article_delete.html"
+    context_object_name = 'article'
